@@ -23,6 +23,29 @@ public class Validator {
                pw.matches(".*[!@#$%^&*()_\\-+=.].*");   
     }
 
+    public static String getPasswordErrorMessage(String pw) {
+        if (pw == null || pw.trim().isEmpty()) {
+            return "⚠ Password cannot be empty.";
+        }
+        if (pw.length() < 8) {
+            return "⚠ Password must be at least 8 characters.";
+        }
+        if (!pw.matches(".*[a-z].*")) {
+            return "⚠ Password must contain at least one lowercase letter.";
+        }
+        if (!pw.matches(".*[A-Z].*")) {
+            return "⚠ Password must contain at least one uppercase letter.";
+        }
+        if (!pw.matches(".*[0-9].*")) {
+            return "⚠ Password must contain at least one digit.";
+        }
+        if (!pw.matches(".*[!@#$%^&*()_\\-+=.].*")) {
+            return "⚠ Password must contain at least one special character (!@#$%^&* etc.).";
+        }
+        return "";
+    }
+    
+
     public static boolean isValidDOB(String dob) {
         if (dob == null || !dob.matches("\\d{2}/\\d{2}/\\d{4}")) return false;
 
