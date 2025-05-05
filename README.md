@@ -31,10 +31,10 @@ Each commit triggers automated tests via **GitHub Actions** CI/CD workflow.
 - Git & GitHub  
 - GitHub Actions
 
-## 🧑‍🤝‍🧑 Contributors
+## 👨🏻‍🤝‍👩🏻 Contributors
 
-- 👩‍💻 [Buse İpek Nacaroğlu](https://github.com/buseipek-ncrgl)  
-- 👩‍💻 [Enes Cıkcık] – (https://github.com/enesckk)
+- 👩‍💻 [Buse İpek Nacaroğlu] – (https://github.com/buseipek-ncrgl)  
+- 👨‍💻 [Enes Cıkcık] – (https://github.com/enesckk)
 
 ## 📂 Project Structure
 
