@@ -60,6 +60,35 @@ public class ValidatorTest {
         assertFalse(Validator.passwordsMatch("Abc123$#", "Xyz789!@"));
     }
 
+    @Test
+    void testPasswordMissingLowercase() {
+        assertEquals("⚠ Password must contain at least one lowercase letter.", Validator.getPasswordErrorMessage("ABC123$#"));
+    }
+
+    @Test
+    void testPasswordMissingUppercase() {
+        assertEquals("⚠ Password must contain at least one uppercase letter.", Validator.getPasswordErrorMessage("abc123$#"));
+    }
+
+    @Test
+    void testPasswordMissingDigit() {
+        assertEquals("⚠ Password must contain at least one digit.", Validator.getPasswordErrorMessage("Abcdef$#"));
+    }
+
+    @Test
+    void testPasswordMissingSpecialChar() {
+        assertEquals("⚠ Password must contain at least one special character (!@#$%^&* etc.).", Validator.getPasswordErrorMessage("Abc12345"));
+    }
+
+    @Test
+    void testPasswordEmpty() {
+        assertEquals("⚠ Password cannot be empty.", Validator.getPasswordErrorMessage(""));
+    }
+
+    @Test
+    void testWeakPassword_NoSpecialChar() {
+        assertFalse(Validator.isStrongPassword("Abc12345"));
+    }
     
     @Test
     void testInvalidDOBFormat() {
